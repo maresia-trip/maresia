@@ -1021,13 +1021,17 @@
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
   reveals.forEach(r => observer.observe(r));
+
+  // Package pill selection
+  function selectPackage(val) {
+    document.getElementById('package-input').value = val;
+    document.getElementById('pill-with').classList.toggle('selected', val === 'with_tents');
+    document.getElementById('pill-without').classList.toggle('selected', val === 'without_tents');
+  }
 
   // Form submission
   const form = document.getElementById('maresia-form');
@@ -1037,17 +1041,12 @@
 
       // Clear previous errors
       form.querySelectorAll('.field-error').forEach(el => el.remove());
-      form.querySelectorAll('[style*="border-color: rgb(226"]').forEach(el => {
-        el.style.borderColor = '';
-        el.style.background = '';
-      });
 
-      // Custom validation
+      // Validate
       const errors = [];
       const checkedRadios = {};
 
       form.querySelectorAll('[required]').forEach(function(el) {
-        // Skip duplicate radio names already checked
         if (el.type === 'radio') {
           if (checkedRadios[el.name]) return;
           checkedRadios[el.name] = true;
@@ -1060,38 +1059,39 @@
           if (!el.checked) errors.push({ el: el.closest('.form-group') || el, msg: 'Please confirm this' });
           return;
         }
-        if (el.type === 'hidden' && el.id === 'package-input' && (!el.value || el.value === '')) { errors.push({ el: document.querySelector('.pricing-pills'), msg: 'Please select a package' }); return; }
-        if (el.type !== 'hidden' && (!el.value || el.value.trim() === '')) {
+        if (el.type === 'hidden') {
+          if (!el.value || el.value === '') {
+            errors.push({ el: document.querySelector('.pricing-pills'), msg: 'Please select a package' });
+          }
+          return;
+        }
+        if (!el.value || el.value.trim() === '') {
           errors.push({ el: el, msg: 'This field is required' });
         }
-      }
       });
 
       if (errors.length > 0) {
-        // Highlight all errors
         errors.forEach(function(err) {
           const target = err.el;
-          if (target.tagName === 'INPUT' || target.tagName === 'SELECT' || target.tagName === 'TEXTAREA') {
+          if (target && target.tagName && ['INPUT','SELECT','TEXTAREA'].includes(target.tagName)) {
             target.style.borderColor = '#E24B4A';
             target.style.background = 'rgba(226,75,74,0.04)';
             target.addEventListener('change', function() {
               target.style.borderColor = '';
               target.style.background = '';
-              const e = target.parentNode.querySelector('.field-error');
+              const e = target.parentNode && target.parentNode.querySelector('.field-error');
               if (e) e.remove();
             }, { once: true });
           }
-          if (!target.querySelector('.field-error')) {
+          if (target && !target.querySelector('.field-error')) {
             const msg = document.createElement('p');
             msg.className = 'field-error';
             msg.style.cssText = 'color:#E24B4A;font-family:Caveat,cursive;font-size:14px;margin:4px 0 0 4px;';
             msg.textContent = err.msg;
-            target.appendChild ? target.appendChild(msg) : target.parentNode.appendChild(msg);
+            target.appendChild(msg);
           }
         });
-        // Scroll to first error
-        const firstErr = errors[0].el;
-        firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        errors[0].el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
@@ -1122,23 +1122,14 @@
     });
   }
 
-  // Package pill selection
-  function selectPackage(val) {
-    document.getElementById('package-input').value = val;
-    document.getElementById('pill-with').classList.toggle('selected', val === 'with_tents');
-    document.getElementById('pill-without').classList.toggle('selected', val === 'without_tents');
-  }
-
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
-      // Close all
       document.querySelectorAll('.faq-q').forEach(b => {
         b.setAttribute('aria-expanded', 'false');
         b.nextElementSibling.classList.remove('open');
       });
-      // Open clicked if was closed
       if (!expanded) {
         btn.setAttribute('aria-expanded', 'true');
         btn.nextElementSibling.classList.add('open');
