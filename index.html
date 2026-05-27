@@ -267,15 +267,18 @@
     align-items: center;
     gap: 2px;
     min-width: 150px;
+    transition: background 0.2s, border-color 0.2s;
+    opacity: 0.5;
   }
-  .pill-alt {
+  .pill.selected {
     background: var(--blue);
+    opacity: 1;
   }
   .pill-label {
     font-size: 14px;
     color: var(--blue);
   }
-  .pill-alt .pill-label {
+  .pill.selected .pill-label {
     color: var(--bg);
   }
   .pill-price {
@@ -283,7 +286,7 @@
     font-weight: 700;
     color: var(--blue-dark);
   }
-  .pill-alt .pill-price {
+  .pill.selected .pill-price {
     color: var(--bg);
   }
 
@@ -922,17 +925,18 @@
   <h2 class="register-title">I want in</h2>
   <p class="register-sub">Costa Vicentina · 14–19 September<br>A minimalist trip across the southwest coast of Portugal.</p>
   <div class="pricing-pills">
-    <div class="pill">
+    <div class="pill" id="pill-with" onclick="selectPackage('with_tents')" style="cursor:pointer;">
       <span class="pill-label">With tents</span>
-      <span class="pill-price">500€</span>
+      <span class="pill-price">€500</span>
     </div>
-    <div class="pill pill-alt">
+    <div class="pill" id="pill-without" onclick="selectPackage('without_tents')" style="cursor:pointer;">
       <span class="pill-label">Without tents</span>
-      <span class="pill-price">450€</span>
+      <span class="pill-price">€450</span>
     </div>
   </div>
 
   <form class="form-wrap" action="https://formspree.io/f/xzdwkrlk" method="POST" id="maresia-form">
+    <input type="hidden" name="package" id="package-input" value="">
     <input type="text" name="full_name" placeholder="Full name" required>
     <input type="email" name="email" placeholder="Email" required>
     <div style="display:flex;flex-direction:column;gap:4px;width:100%;align-items:flex-start;">
@@ -946,12 +950,6 @@
       <option value="female">Female</option>
       <option value="non_binary">Non-binary</option>
       <option value="prefer_not_to_say">Prefer not to say</option>
-    </select>
-
-    <select name="package" required>
-      <option value="" disabled selected>Which package are you interested in?</option>
-      <option value="with_tents">With tents — €500</option>
-      <option value="without_tents">Without tents (I have my own camping gear) — €450</option>
     </select>
 
     <input type="text" name="food_restrictions" placeholder="Food restrictions (or none)">
@@ -1062,9 +1060,11 @@
           if (!el.checked) errors.push({ el: el.closest('.form-group') || el, msg: 'Please confirm this' });
           return;
         }
-        if (!el.value || el.value.trim() === '') {
+        if (el.type === 'hidden' && el.id === 'package-input' && (!el.value || el.value === '')) { errors.push({ el: document.querySelector('.pricing-pills'), msg: 'Please select a package' }); return; }
+        if (el.type !== 'hidden' && (!el.value || el.value.trim() === '')) {
           errors.push({ el: el, msg: 'This field is required' });
         }
+      }
       });
 
       if (errors.length > 0) {
@@ -1109,14 +1109,24 @@
           document.getElementById('form-success').style.display = 'block';
           document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
+          const errData = await res.json().catch(() => ({}));
+          console.error('Formspree error:', res.status, errData);
           btn.textContent = 'Error — please try again';
           btn.disabled = false;
         }
       } catch(err) {
+        console.error('Fetch error:', err);
         btn.textContent = 'Error — please try again';
         btn.disabled = false;
       }
     });
+  }
+
+  // Package pill selection
+  function selectPackage(val) {
+    document.getElementById('package-input').value = val;
+    document.getElementById('pill-with').classList.toggle('selected', val === 'with_tents');
+    document.getElementById('pill-without').classList.toggle('selected', val === 'without_tents');
   }
 
   // FAQ accordion
