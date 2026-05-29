@@ -600,170 +600,130 @@
   .form-wrap textarea::placeholder { font-family: 'Quicksand', sans-serif; }
 
 
-  /* ── MOBILE OVERRIDES ── */
-  @media (max-width: 640px) {
-    .hero-logo {
-      width: 94vw !important;
-      max-width: 420px !important;
-    }
-    .hero-tagline {
-      font-size: 9vw !important;
-      max-width: 94vw !important;
-    }
-  }
-
-
-  /* ── FAQ + FORM MOBILE READABILITY ── */
+  /* ══════════════════════════════════════════════════════════
+     MOBILE-ONLY: ALL mobile size overrides in ONE final block.
+     This MUST be last before </style> to win the cascade.
+     Only applies on screens <= 640px wide.
+     ══════════════════════════════════════════════════════════ */
   @media (max-width: 640px) {
 
-    /* FAQ */
-    .faq-section { padding: 0 16px 60px; }
-    .faq-title { font-size: 42px !important; margin-bottom: 28px; }
-    .faq-q {
-      font-size: 26px !important;
-      padding: 26px 4px !important;
-      line-height: 1.4 !important;
-    }
-    .faq-a p {
-      font-size: 22px !important;
-      line-height: 1.7 !important;
-      padding: 0 4px 8px;
-    }
-    .faq-a.open { max-height: 1000px !important; padding-bottom: 20px; }
+    /* ── Base scale ── */
+    html { font-size: 24px !important; }
+    body { font-size: 24px !important; }
+    p, li, span, div { font-size: 24px !important; line-height: 1.6 !important; }
 
-    /* Form */
-    .register-section { padding: 40px 16px 80px; }
-    .form-wrap { gap: 24px !important; }
-    .form-wrap input,
-    .form-wrap select,
-    .form-wrap textarea {
-      font-size: 22px !important;
-      padding: 22px 24px !important;
-      line-height: 1.5;
-    }
-    .form-wrap button {
-      font-size: 26px !important;
-      padding: 24px 44px !important;
-    }
-    .form-group label {
-      font-size: 22px !important;
-      line-height: 1.5 !important;
-    }
-    .radio-option {
-      font-size: 22px !important;
-      padding: 12px 0 !important;
-      gap: 14px !important;
-    }
-    .radio-option input[type="radio"] {
-      width: 28px !important;
-      height: 28px !important;
-    }
-    .checkbox-option {
-      font-size: 21px !important;
-      line-height: 1.6 !important;
-      gap: 16px !important;
-    }
-    .checkbox-option input[type="checkbox"] {
-      width: 30px !important;
-      height: 30px !important;
-    }
-    .form-note { font-size: 19px !important; margin-top: 14px !important; }
-    .pill { min-width: 150px !important; padding: 18px 30px !important; }
-    .pill-label { font-size: 21px !important; }
-    .pill-price { font-size: 38px !important; }
-    .register-title { font-size: 48px !important; }
-    .register-sub { font-size: 22px !important; line-height: 1.6 !important; }
-    .pricing-pills { gap: 22px !important; margin-bottom: 40px !important; }
+    /* ── Hero ── */
+    .hero-logo { width: 95vw !important; max-width: 440px !important; }
+    .hero-tagline { font-size: 10vw !important; max-width: 95vw !important; line-height: 1.35 !important; }
+    .hero-scroll { font-size: 22px !important; }
 
-    /* Date of birth label */
-    .form-wrap div > label { font-size: 22px !important; }
-  }
-
-
-  /* ── MOBILE GLOBAL SCALE-UP ── */
-  @media (max-width: 640px) {
-
-    /* Base font scale */
-    html { font-size: 22px; }
-
-    /* General body text */
-    body { font-size: 22px; }
-    p, li, span { font-size: 22px; }
-
-    /* Hero */
-    .hero-logo { width: 94vw !important; max-width: 420px !important; }
-    .hero-tagline { font-size: 9vw !important; max-width: 94vw !important; line-height: 1.4 !important; }
-    .hero-scroll { font-size: 20px; }
-
-    /* Burger menu */
-    #maresia-nav { padding: 14px 16px; }
+    /* ── Nav / Burger Menu ── */
+    #maresia-nav { padding: 14px 16px !important; }
     #maresia-nav > div > button {
-      width: 72px !important;
-      height: 72px !important;
+      width: 76px !important;
+      height: 76px !important;
     }
     #maresia-nav > div > button svg {
-      width: 36px !important;
-      height: 26px !important;
+      width: 38px !important;
+      height: 28px !important;
     }
     #maresia-nav > div > div a {
-      font-size: 24px !important;
-      padding: 18px 28px !important;
+      font-size: 26px !important;
+      padding: 20px 30px !important;
     }
-    #nav-menu { min-width: 260px !important; }
+    #nav-menu { min-width: 280px !important; }
 
-    /* Sticky socials */
+    /* ── Sticky socials ── */
     #sticky-socials a {
-      width: 64px !important;
-      height: 64px !important;
+      width: 68px !important;
+      height: 68px !important;
     }
     #sticky-socials a svg {
-      width: 30px !important;
-      height: 30px !important;
+      width: 32px !important;
+      height: 32px !important;
     }
-    #sticky-socials { gap: 20px !important; bottom: 20px !important; }
+    #sticky-socials { gap: 22px !important; bottom: 22px !important; }
 
-    /* About text */
-    .about-text { font-size: 22px !important; line-height: 1.7 !important; }
+    /* ── About ── */
+    .about-text { font-size: 24px !important; line-height: 1.7 !important; }
+    .about-text img { margin-bottom: 16px !important; }
 
-    /* Plan & Activities title */
-    .reveal p[style*="Plan"] { font-size: 44px !important; }
+    /* ── Plan & Activities ── */
+    .reveal p[style*="Plan"] { font-size: 48px !important; }
+    #plan-title { font-size: 48px !important; }
+    #plan-subtitle { font-size: 28px !important; }
 
-    /* FAQ */
-    .faq-title { font-size: 44px !important; }
-    .faq-q { font-size: 28px !important; padding: 28px 4px !important; line-height: 1.4 !important; }
-    .faq-a p { font-size: 22px !important; line-height: 1.7 !important; }
-    .faq-a.open { max-height: 1200px !important; }
+    /* ── FAQ ── */
+    .faq-section { padding: 0 16px 60px !important; }
+    .faq-title { font-size: 48px !important; margin-bottom: 32px !important; }
+    .faq-q {
+      font-size: 30px !important;
+      padding: 30px 4px !important;
+      line-height: 1.35 !important;
+    }
+    .faq-q span { font-size: 30px !important; }
+    .faq-a p {
+      font-size: 26px !important;
+      line-height: 1.7 !important;
+      padding: 0 4px 10px !important;
+    }
+    .faq-a.open { max-height: 1500px !important; padding-bottom: 24px !important; }
+    .faq-icon svg { width: 28px !important; height: 28px !important; }
 
-    /* Form */
-    .register-title { font-size: 50px !important; }
-    .register-sub { font-size: 24px !important; line-height: 1.6 !important; }
-    .pill-label { font-size: 22px !important; }
-    .pill-price { font-size: 40px !important; }
-    .pill { padding: 20px 32px !important; min-width: 155px !important; }
-    .form-wrap { gap: 26px !important; }
+    /* ── Register / Form ── */
+    .register-section { padding: 40px 16px 80px !important; }
+    .register-title { font-size: 54px !important; }
+    .register-sub { font-size: 26px !important; line-height: 1.6 !important; }
+
+    .pricing-pills { gap: 26px !important; margin-bottom: 48px !important; }
+    .pill { min-width: 160px !important; padding: 22px 34px !important; }
+    .pill-label { font-size: 24px !important; }
+    .pill-price { font-size: 44px !important; }
+
+    .form-wrap { gap: 28px !important; }
     .form-wrap input,
     .form-wrap select,
     .form-wrap textarea {
-      font-size: 24px !important;
-      padding: 22px 26px !important;
+      font-size: 26px !important;
+      padding: 24px 28px !important;
+      line-height: 1.5 !important;
     }
-    .form-wrap button { font-size: 28px !important; padding: 26px 48px !important; }
-    .form-group > label { font-size: 24px !important; line-height: 1.5 !important; }
-    .radio-option { font-size: 24px !important; padding: 12px 0 !important; gap: 16px !important; }
-    .radio-option input[type="radio"] { width: 30px !important; height: 30px !important; }
-    .checkbox-option { font-size: 22px !important; line-height: 1.6 !important; gap: 18px !important; }
-    .checkbox-option input[type="checkbox"] { width: 32px !important; height: 32px !important; }
-    .form-note { font-size: 20px !important; margin-top: 16px !important; }
-    .pricing-pills { gap: 24px !important; margin-bottom: 44px !important; }
+    .form-wrap input::placeholder,
+    .form-wrap textarea::placeholder { font-size: 26px !important; }
+    .form-wrap button {
+      font-size: 32px !important;
+      padding: 28px 52px !important;
+    }
+    .form-group > label,
+    .form-group label {
+      font-size: 26px !important;
+      line-height: 1.5 !important;
+    }
+    .form-wrap div > label { font-size: 26px !important; }
+    .radio-group { gap: 14px !important; }
+    .radio-option {
+      font-size: 26px !important;
+      padding: 14px 0 !important;
+      gap: 16px !important;
+    }
+    .radio-option input[type="radio"] {
+      width: 32px !important;
+      height: 32px !important;
+    }
+    .checkbox-group { padding: 22px !important; }
+    .checkbox-option {
+      font-size: 24px !important;
+      line-height: 1.6 !important;
+      gap: 18px !important;
+    }
+    .checkbox-option input[type="checkbox"] {
+      width: 34px !important;
+      height: 34px !important;
+    }
+    .form-note { font-size: 22px !important; margin-top: 18px !important; }
 
-    /* Footer */
-    footer { font-size: 18px !important; }
-  }
-
-
-  @media (max-width: 640px) {
-    #plan-title { font-size: 44px !important; }
-    #plan-subtitle { font-size: 26px !important; }
+    /* ── Footer ── */
+    footer { font-size: 20px !important; padding: 40px 24px !important; }
   }
 
 </style>
