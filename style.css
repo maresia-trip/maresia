@@ -209,6 +209,7 @@ section {
   color: var(--blue-dark);
   text-align: center;
   margin-bottom: 32px;
+  font-family: 'Gaegu', cursive;
 }
 .faq-item {
   border-bottom: 1.5px solid rgba(27, 91, 194, 0.2);
@@ -504,15 +505,15 @@ footer {
   .founders { flex-direction: column; align-items: center; }
   .founder { width: min(280px, 85vw); }
 
-  /* Sticky socials → bottom center pill */
+  /* Sticky socials → bottom left on mobile */
   #sticky-socials {
-    left: 50% !important;
+    left: 16px !important;
     right: auto !important;
     bottom: 16px !important;
     top: auto !important;
-    transform: translateX(-50%) translateY(0) !important;
+    transform: none !important;
     flex-direction: row !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
   #sticky-socials > div { display: none; }
   #sticky-socials a {
@@ -530,9 +531,9 @@ footer {
 
   /* Hero */
   .hero { padding: 80px 20px 60px; }
-  .hero-logo { width: 75vw !important; max-width: 320px !important; }
-  .hero-tagline { font-size: 6.5vw !important; max-width: 90vw !important; line-height: 1.4 !important; }
-  .hero-scroll { font-size: 14px !important; }
+  .hero-logo { width: 68vw !important; max-width: 396px !important; }
+  .hero-tagline { font-size: 5.8vw !important; max-width: 85vw !important; line-height: 1.4 !important; }
+  .hero-scroll { font-size: 13px !important; }
 
   /* Nav / Burger Menu */
   #maresia-nav { padding: 12px 14px !important; }
@@ -564,73 +565,73 @@ footer {
   #plan-subtitle { font-size: 18px !important; }
 
   /* FAQ */
-  .faq-section { padding: 0 16px 40px !important; }
-  .faq-title { font-size: 32px !important; margin-bottom: 20px !important; }
+  .faq-section { padding: 0 16px 36px !important; }
+  .faq-title { font-size: 29px !important; margin-bottom: 18px !important; }
   .faq-q {
-    font-size: 20px !important;
-    padding: 18px 4px !important;
+    font-size: 18px !important;
+    padding: 16px 4px !important;
     line-height: 1.4 !important;
   }
-  .faq-q span { font-size: 20px !important; }
+  .faq-q span { font-size: 18px !important; }
   .faq-a p {
-    font-size: 16px !important;
+    font-size: 14px !important;
     line-height: 1.6 !important;
-    padding: 0 4px 8px !important;
+    padding: 0 4px 7px !important;
   }
-  .faq-a.open { max-height: 1000px !important; padding-bottom: 16px !important; }
-  .faq-icon svg { width: 18px !important; height: 18px !important; }
+  .faq-a.open { max-height: 1000px !important; padding-bottom: 14px !important; }
+  .faq-icon svg { width: 16px !important; height: 16px !important; }
 
   /* Register / Form */
-  .register-section { padding: 32px 16px 60px !important; }
-  .register-title { font-size: 36px !important; }
-  .register-sub { font-size: 15px !important; line-height: 1.5 !important; }
+  .register-section { padding: 28px 16px 54px !important; }
+  .register-title { font-size: 32px !important; }
+  .register-sub { font-size: 14px !important; line-height: 1.5 !important; }
 
-  .pricing-pills { gap: 12px !important; margin-bottom: 24px !important; }
-  .pill { min-width: 110px !important; padding: 10px 16px !important; }
-  .pill-label { font-size: 13px !important; }
-  .pill-price { font-size: 22px !important; }
+  .pricing-pills { gap: 11px !important; margin-bottom: 22px !important; }
+  .pill { min-width: 100px !important; padding: 9px 14px !important; }
+  .pill-label { font-size: 12px !important; }
+  .pill-price { font-size: 20px !important; }
 
-  .form-wrap { gap: 14px !important; }
+  .form-wrap { gap: 12px !important; }
   .form-wrap input,
   .form-wrap select,
   .form-wrap textarea {
-    font-size: 16px !important;
-    padding: 12px 16px !important;
+    font-size: 14px !important;
+    padding: 11px 14px !important;
     line-height: 1.4 !important;
   }
   .form-wrap input::placeholder,
-  .form-wrap textarea::placeholder { font-size: 16px !important; }
+  .form-wrap textarea::placeholder { font-size: 14px !important; }
   .form-wrap button {
-    font-size: 17px !important;
-    padding: 14px 28px !important;
+    font-size: 15px !important;
+    padding: 13px 25px !important;
   }
   .form-group > label,
   .form-group label {
-    font-size: 15px !important;
+    font-size: 14px !important;
     line-height: 1.4 !important;
   }
-  .form-wrap div > label { font-size: 15px !important; }
-  .radio-group { gap: 8px !important; }
+  .form-wrap div > label { font-size: 14px !important; }
+  .radio-group { gap: 7px !important; }
   .radio-option {
-    font-size: 15px !important;
-    padding: 6px 0 !important;
-    gap: 8px !important;
+    font-size: 14px !important;
+    padding: 5px 0 !important;
+    gap: 7px !important;
   }
   .radio-option input[type="radio"] {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .checkbox-group { padding: 11px !important; }
+  .checkbox-option {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    gap: 9px !important;
+  }
+  .checkbox-option input[type="checkbox"] {
     width: 18px !important;
     height: 18px !important;
   }
-  .checkbox-group { padding: 12px !important; }
-  .checkbox-option {
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    gap: 10px !important;
-  }
-  .checkbox-option input[type="checkbox"] {
-    width: 20px !important;
-    height: 20px !important;
-  }
-  .form-note { font-size: 13px !important; margin-top: 8px !important; }
+  .form-note { font-size: 12px !important; margin-top: 7px !important; }
 
   /* Footer */
   footer { font-size: 13px !important; padding: 28px 18px !important; }

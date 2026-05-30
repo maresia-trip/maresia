@@ -531,5 +531,37 @@
     });
   });
 </script>
+
+<script>
+  // Hide socials when FAQ or form is in view
+  (function() {
+    const socials = document.getElementById('sticky-socials');
+    if (!socials) return;
+    const targets = document.querySelectorAll('.faq-section, .register-section');
+    if (!targets.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      const anyVisible = entries.some(e => e.isIntersecting);
+      socials.style.opacity = anyVisible ? '0' : '1';
+      socials.style.pointerEvents = anyVisible ? 'none' : 'auto';
+    }, { threshold: 0.1 });
+    targets.forEach(t => obs.observe(t));
+  })();
+</script>
+<script>
+  // Hide socials when FAQ or form is in view
+  (function() {
+    const socials = document.getElementById('sticky-socials');
+    if (!socials) return;
+    const targets = document.querySelectorAll('.faq-section, .register-section');
+    if (!targets.length) return;
+    socials.style.transition = 'opacity 0.3s ease';
+    const obs = new IntersectionObserver((entries) => {
+      const anyVisible = entries.some(e => e.isIntersecting);
+      socials.style.opacity = anyVisible ? '0' : '1';
+      socials.style.pointerEvents = anyVisible ? 'none' : 'auto';
+    }, { threshold: 0.1 });
+    targets.forEach(t => obs.observe(t));
+  })();
+</script>
 </body>
 </html>
