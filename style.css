@@ -524,113 +524,113 @@ footer {
   }
 
   /* Base text */
-  html { font-size: 20px !important; }
-  body { font-size: 20px !important; line-height: 1.6 !important; }
+  html { font-size: 26px !important; }
+  body { font-size: 26px !important; line-height: 1.7 !important; }
 
   /* Hero */
   .hero { padding: 80px 20px 60px; }
-  .hero-logo { width: 85vw !important; max-width: 440px !important; }
-  .hero-tagline { font-size: 8vw !important; max-width: 95vw !important; line-height: 1.35 !important; }
-  .hero-scroll { font-size: 20px !important; }
+  .hero-logo { width: 90vw !important; max-width: 440px !important; }
+  .hero-tagline { font-size: 10vw !important; max-width: 95vw !important; line-height: 1.35 !important; }
+  .hero-scroll { font-size: 24px !important; }
 
   /* Nav / Burger Menu */
   #maresia-nav { padding: 14px 16px !important; }
   #maresia-nav > div > button {
-    width: 60px !important;
-    height: 60px !important;
+    width: 72px !important;
+    height: 72px !important;
   }
   #maresia-nav > div > button svg {
-    width: 30px !important;
-    height: 22px !important;
+    width: 36px !important;
+    height: 26px !important;
   }
   #maresia-nav > div > div a {
-    font-size: 22px !important;
-    padding: 16px 24px !important;
+    font-size: 28px !important;
+    padding: 20px 30px !important;
   }
-  #nav-menu { min-width: 240px !important; }
+  #nav-menu { min-width: 280px !important; }
 
   /* About */
-  .about-text { font-size: 20px !important; line-height: 1.7 !important; }
+  .about-text { font-size: 26px !important; line-height: 1.7 !important; }
   .about-text img { margin-bottom: 16px !important; }
 
   /* Sections general */
   section { padding: 48px 20px; }
 
   /* Plan & Activities */
-  .reveal p { font-size: 20px !important; line-height: 1.6 !important; }
-  .reveal p[style*="font-size:32px"] { font-size: 36px !important; }
-  .reveal p[style*="font-size: 32px"] { font-size: 36px !important; }
-  #plan-subtitle { font-size: 24px !important; }
+  .reveal p { font-size: 26px !important; line-height: 1.7 !important; }
+  .reveal p[style*="font-size:32px"] { font-size: 44px !important; }
+  .reveal p[style*="font-size: 32px"] { font-size: 44px !important; }
+  #plan-subtitle { font-size: 30px !important; }
 
   /* FAQ */
   .faq-section { padding: 0 16px 60px !important; }
-  .faq-title { font-size: 38px !important; margin-bottom: 28px !important; }
+  .faq-title { font-size: 50px !important; margin-bottom: 32px !important; }
   .faq-q {
-    font-size: 24px !important;
-    padding: 24px 4px !important;
+    font-size: 32px !important;
+    padding: 28px 4px !important;
     line-height: 1.35 !important;
   }
-  .faq-q span { font-size: 24px !important; }
+  .faq-q span { font-size: 32px !important; }
   .faq-a p {
-    font-size: 20px !important;
+    font-size: 26px !important;
     line-height: 1.7 !important;
-    padding: 0 4px 10px !important;
+    padding: 0 4px 12px !important;
   }
-  .faq-a.open { max-height: 1500px !important; padding-bottom: 24px !important; }
-  .faq-icon svg { width: 22px !important; height: 22px !important; }
+  .faq-a.open { max-height: 2000px !important; padding-bottom: 28px !important; }
+  .faq-icon svg { width: 28px !important; height: 28px !important; }
 
   /* Register / Form */
   .register-section { padding: 40px 16px 80px !important; }
-  .register-title { font-size: 44px !important; }
-  .register-sub { font-size: 20px !important; line-height: 1.6 !important; }
+  .register-title { font-size: 56px !important; }
+  .register-sub { font-size: 26px !important; line-height: 1.6 !important; }
 
-  .pricing-pills { gap: 18px !important; margin-bottom: 36px !important; }
-  .pill { min-width: 130px !important; padding: 16px 24px !important; }
-  .pill-label { font-size: 18px !important; }
-  .pill-price { font-size: 34px !important; }
+  .pricing-pills { gap: 24px !important; margin-bottom: 44px !important; }
+  .pill { min-width: 150px !important; padding: 20px 30px !important; }
+  .pill-label { font-size: 24px !important; }
+  .pill-price { font-size: 44px !important; }
 
-  .form-wrap { gap: 22px !important; }
+  .form-wrap { gap: 28px !important; }
   .form-wrap input,
   .form-wrap select,
   .form-wrap textarea {
-    font-size: 20px !important;
-    padding: 18px 22px !important;
+    font-size: 26px !important;
+    padding: 22px 26px !important;
     line-height: 1.5 !important;
   }
   .form-wrap input::placeholder,
-  .form-wrap textarea::placeholder { font-size: 20px !important; }
+  .form-wrap textarea::placeholder { font-size: 26px !important; }
   .form-wrap button {
-    font-size: 24px !important;
-    padding: 22px 40px !important;
+    font-size: 30px !important;
+    padding: 26px 48px !important;
   }
   .form-group > label,
   .form-group label {
-    font-size: 20px !important;
+    font-size: 26px !important;
     line-height: 1.5 !important;
   }
-  .form-wrap div > label { font-size: 20px !important; }
-  .radio-group { gap: 12px !important; }
+  .form-wrap div > label { font-size: 26px !important; }
+  .radio-group { gap: 16px !important; }
   .radio-option {
-    font-size: 20px !important;
-    padding: 10px 0 !important;
-    gap: 12px !important;
+    font-size: 26px !important;
+    padding: 14px 0 !important;
+    gap: 16px !important;
   }
   .radio-option input[type="radio"] {
-    width: 26px !important;
-    height: 26px !important;
+    width: 32px !important;
+    height: 32px !important;
   }
-  .checkbox-group { padding: 18px !important; }
+  .checkbox-group { padding: 22px !important; }
   .checkbox-option {
-    font-size: 18px !important;
+    font-size: 24px !important;
     line-height: 1.6 !important;
-    gap: 14px !important;
+    gap: 16px !important;
   }
   .checkbox-option input[type="checkbox"] {
-    width: 28px !important;
-    height: 28px !important;
+    width: 34px !important;
+    height: 34px !important;
   }
-  .form-note { font-size: 18px !important; margin-top: 14px !important; }
+  .form-note { font-size: 22px !important; margin-top: 16px !important; }
 
   /* Footer */
-  footer { font-size: 16px !important; padding: 32px 20px !important; }
+  footer { font-size: 20px !important; padding: 36px 20px !important; }
 }
