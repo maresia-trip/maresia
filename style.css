@@ -517,12 +517,12 @@ footer {
   }
   #sticky-socials > div { display: none; }
   #sticky-socials a {
-    width: 56px !important;
-    height: 56px !important;
+    width: 40px !important;
+    height: 40px !important;
   }
   #sticky-socials a svg {
-    width: 28px !important;
-    height: 28px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
 
   /* Base text */
